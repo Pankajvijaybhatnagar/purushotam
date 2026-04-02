@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrimad Bhagavad Gita - Chapter 15 | Purushottam Yoga | Swami Shri Gyananand Ji Maharaj</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --deep-saffron: #E05500;
+    --gold: #D4A017;
+    --bright-gold: #FFD700;
+    --maroon: #6B1A1A;
+    --deep-maroon: #3D0A0A;
+    --cream: #FFF8E7;
+    --dark-bg: #100400;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background-color:var(--dark-bg); color:var(--cream); font-family:'Noto Sans Devanagari',sans-serif; overflow-x:hidden; }
+
+  .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--maroon),var(--saffron),var(--bright-gold)); z-index:1000; transition:width 0.1s ease; width:0%; }
+
+  #particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:hidden; }
+  .particle { position:absolute; border-radius:50%; animation:float-up linear infinite; opacity:0; }
+  @keyframes float-up {
+    0% { transform:translateY(100vh) rotate(0deg); opacity:0; }
+    10% { opacity:0.7; }
+    90% { opacity:0.35; }
+    100% { transform:translateY(-10vh) rotate(360deg); opacity:0; }
+  }
+
+  .top-strip {
+    background:linear-gradient(90deg,var(--deep-maroon),var(--deep-saffron),var(--gold),var(--deep-saffron),var(--deep-maroon));
+    text-align:center; padding:9px;
+    font-family:'Tiro Devanagari Sanskrit',serif; font-size:0.88rem; letter-spacing:3px; color:var(--bright-gold);
+    background-size:200% auto; animation:shimmer 4s linear infinite; position:relative; z-index:10;
+  }
+  @keyframes shimmer { 0%{background-position:0% center} 100%{background-position:200% center} }
+
+  /* ===== FIXED LINE ARTS ===== */
+  .line-art-left,.line-art-right {
+    position:fixed; top:0; bottom:0; width:70px; z-index:6; pointer-events:none;
+    display:flex; align-items:stretch; justify-content:center;
+  }
+  .line-art-left{left:0;} .line-art-right{right:0;}
+  .line-art-left svg,.line-art-right svg { height:100vh; width:70px; opacity:0.5; }
+
+  /* ===== HERO ===== */
+  .hero-banner {
+    position:relative; z-index:5; min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 50% 0%,#5A1800 0%,#220800 45%,#0D0300 100%);
+  }
+  .hero-banner::before {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(circle at 15% 50%,rgba(255,107,0,0.13) 0%,transparent 45%),
+               radial-gradient(circle at 85% 50%,rgba(212,160,23,0.13) 0%,transparent 45%);
+  }
+  .om-bg {
+    position:absolute; font-size:38vw; color:rgba(212,160,23,0.04);
+    font-family:'Tiro Devanagari Sanskrit',serif; top:50%; left:50%;
+    transform:translate(-50%,-50%); line-height:1; pointer-events:none;
+    animation:pulse-om 7s ease-in-out infinite;
+  }
+  @keyframes pulse-om {
+    0%,100%{opacity:0.04;transform:translate(-50%,-50%) scale(1)}
+    50%{opacity:0.09;transform:translate(-50%,-50%) scale(1.04)}
+  }
+  .corner{position:absolute;width:65px;height:65px;border-color:var(--gold);border-style:solid;opacity:0.55;}
+  .corner-tl{top:22px;left:22px;border-width:2px 0 0 2px;}
+  .corner-tr{top:22px;right:22px;border-width:2px 2px 0 0;}
+  .corner-bl{bottom:22px;left:22px;border-width:0 0 2px 2px;}
+  .corner-br{bottom:22px;right:22px;border-width:0 2px 2px 0;}
+  .frame-border{position:absolute;inset:22px;border:1px solid rgba(212,160,23,0.18);pointer-events:none;}
+  .frame-border::before{content:'';position:absolute;inset:9px;border:1px solid rgba(212,160,23,0.09);}
+
+  /* Hero 3-column */
+  .hero-layout {
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:260px 1fr 260px;
+    gap:0; width:100%; max-width:1280px;
+    padding:3rem 2rem; align-items:center;
+    animation:fade-in-up 1.4s ease forwards;
+  }
+  @keyframes fade-in-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+  .portrait-frame { display:flex; flex-direction:column; align-items:center; gap:1rem; }
+  .portrait-svg-wrap {
+    width:190px; height:235px;
+    border:2px solid rgba(212,160,23,0.45); border-radius:14px; overflow:hidden;
+    background:linear-gradient(180deg,rgba(80,20,0,0.8),rgba(20,5,0,0.95));
+    box-shadow:0 0 50px rgba(212,160,23,0.18),inset 0 0 30px rgba(0,0,0,0.5);
+    position:relative;
+  }
+  .portrait-svg-wrap::before {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at 50% 30%,rgba(255,160,40,0.14) 0%,transparent 65%);
+  }
+  .portrait-image {
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .portrait-label {
+    font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:1.5px;
+    color:rgba(212,160,23,0.8); text-align:center; text-transform:uppercase; line-height:1.8;
+  }
+
+  .hero-center { text-align:center; padding:0 1.5rem; }
+  .guru-badge {
+    display:inline-block;
+    background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(255,107,0,0.08));
+    border:1px solid rgba(212,160,23,0.4); padding:7px 26px; border-radius:30px;
+    font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:2px; color:var(--bright-gold);
+    margin-bottom:1.2rem; text-transform:uppercase;
+  }
+  .hero-om {
+    font-size:clamp(3rem,6vw,5.5rem); color:var(--bright-gold);
+    font-family:'Tiro Devanagari Sanskrit',serif; animation:glow-om 3s ease-in-out infinite;
+    display:block; margin-bottom:0.3rem;
+  }
+  @keyframes glow-om{
+    0%,100%{text-shadow:0 0 40px rgba(255,215,0,0.5),0 0 80px rgba(255,107,0,0.25)}
+    50%{text-shadow:0 0 90px rgba(255,215,0,0.9),0 0 180px rgba(255,107,0,0.5)}
+  }
+  .hero-title-main {
+    font-family:'Tiro Devanagari Sanskrit',serif; font-size:clamp(1.8rem,4vw,3.4rem);
+    color:var(--bright-gold); text-shadow:2px 2px 12px rgba(0,0,0,0.9),0 0 40px rgba(212,160,23,0.4);
+    line-height:1.3; margin-bottom:0.3rem;
+  }
+  .hero-subtitle {
+    font-family:'Tiro Devanagari Sanskrit',serif; font-size:clamp(1rem,2.5vw,1.7rem);
+    color:var(--saffron); margin-bottom:0.8rem; text-shadow:0 0 20px rgba(255,107,0,0.4);
+  }
+  .hero-yoga-title {
+    font-family:'Tiro Devanagari Sanskrit',serif; font-size:clamp(1.4rem,3.5vw,2.8rem);
+    color:var(--bright-gold); text-shadow:0 0 40px rgba(255,215,0,0.5); margin-bottom:0.6rem;
+  }
+  .hero-divider {
+    width:180px; height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),var(--saffron),var(--gold),transparent);
+    margin:1.2rem auto; position:relative;
+  }
+  .hero-divider::before,.hero-divider::after{
+    content:'✦'; position:absolute; top:50%; transform:translateY(-50%); color:var(--gold); font-size:0.75rem;
+  }
+  .hero-divider::before{left:-14px;} .hero-divider::after{right:-14px;}
+
+  .hero-desc{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.9rem;color:#C4A870;line-height:1.9;max-width:480px;margin:0.8rem auto 1.4rem;}
+  .hero-badges{display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+  .count-badge{background:linear-gradient(135deg,rgba(212,160,23,0.18),rgba(255,107,0,0.12));border:1px solid rgba(212,160,23,0.4);padding:10px 22px;border-radius:6px;text-align:center;}
+  .count-badge .num{display:block;font-size:1.6rem;font-weight:700;color:var(--bright-gold);font-family:'Cinzel Decorative',serif;}
+  .count-badge .lbl{font-size:0.65rem;color:var(--saffron);letter-spacing:1.5px;font-family:'Cinzel',serif;text-transform:uppercase;}
+
+  .scroll-indicator{
+    position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    animation:bounce 2.2s ease-in-out infinite;
+    color:rgba(212,160,23,0.6);font-size:0.65rem;letter-spacing:2px;font-family:'Cinzel',serif;
+  }
+  .scroll-indicator::after{content:'▼';font-size:1.1rem;color:var(--gold);}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(9px)}}
+
+  /* STICKY NAV */
+  .sticky-nav{
+    position:sticky;top:0;z-index:100;background:rgba(10,3,0,0.97);backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(212,160,23,0.2);padding:0.75rem 2rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  }
+  .nav-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.95rem;color:var(--gold);}
+  .nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap;}
+  .nav-links a{color:rgba(212,160,23,0.65);text-decoration:none;font-size:0.72rem;letter-spacing:1.5px;transition:color 0.2s;font-family:'Cinzel',serif;text-transform:uppercase;}
+  .nav-links a:hover{color:var(--bright-gold);}
+
+  /* MAIN */
+  .main-content{position:relative;z-index:5;background:linear-gradient(180deg,#0D0300 0%,#130500 50%,#0D0300 100%);}
+
+  /* INTRO */
+  .intro-section{max-width:860px;margin:0 auto;padding:5rem 2rem 3rem;text-align:center;}
+  .section-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:clamp(1.4rem,3vw,2rem);color:var(--bright-gold);margin-bottom:1rem;display:inline-block;position:relative;}
+  .section-title::after{content:'';display:block;width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0.5rem auto 0;}
+  .intro-text{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:#E0CFA0;margin-bottom:1.5rem;}
+  .mahatmya-box{
+    background:linear-gradient(135deg,rgba(107,26,26,0.3),rgba(212,160,23,0.08));
+    border:1px solid rgba(212,160,23,0.3);border-left:4px solid var(--saffron);
+    padding:2rem;border-radius:8px;margin:2rem 0;
+    font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.1;color:var(--cream);
+    font-style:italic;position:relative;
+  }
+  .mahatmya-box::before{content:'"';font-size:5rem;color:rgba(212,160,23,0.12);position:absolute;top:-10px;left:15px;font-family:'Cinzel Decorative',serif;line-height:1;}
+  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:2rem;}
+  .feature-item{background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.18);border-radius:10px;padding:1.5rem;text-align:center;}
+  .feature-item .fi-icon{font-size:2rem;margin-bottom:0.5rem;}
+  .feature-item .fi-title{font-family:'Tiro Devanagari Sanskrit',serif;color:var(--gold);margin-bottom:0.4rem;font-size:1rem;}
+  .feature-item .fi-desc{font-size:0.8rem;color:#A09070;}
+
+  .section-banner{
+    background:linear-gradient(135deg,rgba(107,26,26,0.5),rgba(61,10,10,0.85));
+    border-top:1px solid rgba(212,160,23,0.22);border-bottom:1px solid rgba(212,160,23,0.22);
+    padding:2.5rem 2rem;text-align:center;margin:3rem 0;
+  }
+
+  /* SHLOKAS */
+  .shlokas-section{max-width:860px;margin:0 auto;padding:2rem;}
+
+  .shloka-card{
+    background:linear-gradient(135deg,rgba(22,7,0,0.97),rgba(36,12,0,0.97));
+    border:1px solid rgba(212,160,23,0.18);border-radius:14px;margin-bottom:2.5rem;
+    overflow:hidden;position:relative;
+    transition:transform 0.3s ease,box-shadow 0.3s ease;
+  }
+  .shloka-card:hover{transform:translateY(-4px);box-shadow:0 12px 50px rgba(212,160,23,0.13),0 0 0 1px rgba(212,160,23,0.28);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--saffron),var(--gold),transparent);}
+  .shloka-card::after{content:'';position:absolute;bottom:10px;right:14px;width:38px;height:38px;border-right:1px solid rgba(212,160,23,0.13);border-bottom:1px solid rgba(212,160,23,0.13);border-radius:0 0 6px 0;}
+
+  .shloka-header{display:flex;align-items:center;gap:1.2rem;padding:1rem 1.5rem;background:rgba(212,160,23,0.07);border-bottom:1px solid rgba(212,160,23,0.12);}
+  .shloka-number{
+    min-width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(135deg,var(--maroon),var(--deep-maroon));
+    border:2px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cinzel',serif;font-size:1rem;color:var(--bright-gold);flex-shrink:0;
+    box-shadow:0 0 16px rgba(212,160,23,0.2);font-weight:700;
+  }
+  .shloka-meta{display:flex;flex-direction:column;gap:3px;}
+  .shloka-label{font-family:'Cinzel',serif;font-size:0.7rem;color:var(--saffron);letter-spacing:1.5px;text-transform:uppercase;}
+  .shloka-sublabel{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.8rem;color:rgba(212,160,23,0.45);}
+
+  .shloka-body{padding:2rem 2rem 1.5rem;}
+  .shloka-sanskrit{
+    font-family:'Tiro Devanagari Sanskrit',serif;
+    font-size:clamp(1.05rem,2.5vw,1.3rem);line-height:2.5;color:var(--cream);
+    text-align:center;text-shadow:0 0 30px rgba(255,215,0,0.07);
+  }
+  .shloka-ornament{text-align:center;padding:1.2rem 0 0;color:rgba(212,160,23,0.22);font-size:0.9rem;letter-spacing:8px;}
+
+  .shloka-card.key-shloka{border-color:rgba(255,215,0,0.45);}
+  .shloka-card.key-shloka .shloka-sanskrit{color:var(--bright-gold);text-shadow:0 0 40px rgba(255,215,0,0.3);}
+  .shloka-card.key-shloka .shloka-header{background:rgba(255,215,0,0.08);}
+
+  /* PHALA SHRUTI */
+  .phala-shruti{
+    background:linear-gradient(135deg,rgba(107,26,26,0.4),rgba(61,10,10,0.65));
+    border:2px solid rgba(212,160,23,0.3);border-radius:16px;
+    padding:3rem 2rem;margin:2rem auto 3rem;max-width:860px;text-align:center;position:relative;overflow:hidden;
+  }
+  .phala-shruti::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,160,23,0.06) 0%,transparent 65%);}
+  .phala-shruti-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:clamp(1.2rem,3vw,1.9rem);color:var(--bright-gold);margin-bottom:1rem;}
+  .benefit-chips{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;}
+  .chip{background:rgba(0,0,0,0.3);border:1px solid rgba(212,160,23,0.28);border-radius:8px;padding:0.9rem 1.4rem;font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);}
+
+  /* GURU */
+  .guru-section{background:linear-gradient(180deg,#0D0300,#1C0600,#0D0300);padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;}
+  .guru-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,107,0,0.09) 0%,transparent 65%);}
+  .guru-name{font-family:'Cinzel Decorative',serif;font-size:clamp(1.2rem,3.5vw,2.5rem);color:var(--bright-gold);text-shadow:0 0 60px rgba(255,215,0,0.4);margin-bottom:0.4rem;position:relative;z-index:2;}
+  .guru-name-hi{font-family:'Tiro Devanagari Sanskrit',serif;font-size:clamp(1rem,2.5vw,1.5rem);color:var(--gold);margin-bottom:0.3rem;position:relative;z-index:2;}
+  .guru-subtitle{font-family:'Cinzel',serif;font-size:0.78rem;color:var(--saffron);letter-spacing:3px;margin-bottom:2rem;position:relative;z-index:2;text-transform:uppercase;}
+  .guru-message{max-width:680px;margin:0 auto;font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.3;color:#D4C4A0;font-style:italic;position:relative;z-index:2;}
+  .guru-sig{margin-top:2rem;font-family:'Cinzel',serif;color:rgba(212,160,23,0.55);font-size:0.75rem;letter-spacing:2px;position:relative;z-index:2;text-transform:uppercase;}
+
+  .closing{text-align:center;padding:3.5rem 2rem;background:linear-gradient(180deg,#0D0300,#060100);}
+  .closing-mantra{font-family:'Tiro Devanagari Sanskrit',serif;font-size:clamp(0.9rem,2.5vw,1.35rem);color:var(--gold);line-height:2.6;max-width:680px;margin:0 auto;}
+  .closing-hari{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.8rem;color:var(--saffron);margin-top:1.5rem;text-shadow:0 0 30px rgba(255,107,0,0.3);}
+
+  footer{background:#050100;border-top:1px solid rgba(212,160,23,0.18);padding:2rem;text-align:center;position:relative;z-index:5;}
+  .footer-om{font-size:2rem;color:var(--gold);font-family:'Tiro Devanagari Sanskrit',serif;margin-bottom:0.8rem;}
+  .footer-text{font-size:0.72rem;color:rgba(212,160,23,0.45);letter-spacing:1px;font-family:'Cinzel',serif;text-transform:uppercase;line-height:2;}
+
+  .diya{display:inline-block;animation:flicker 2s ease-in-out infinite;}
+  @keyframes flicker{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(0.93);opacity:0.8}75%{transform:scaleY(1.06) scaleX(0.96)}}
+
+  @media(max-width:900px){
+    .hero-layout{grid-template-columns:1fr;}
+    .portrait-frame{display:none;}
+    .line-art-left,.line-art-right{display:none;}
+  }
+  @media(max-width:600px){.sticky-nav{padding:0.6rem 1rem;}.shlokas-section{padding:1rem;}.shloka-body{padding:1.2rem;}}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="progressBar"></div>
+<div id="particles"></div>
+
+<!-- LEFT LINE ART -->
+<div class="line-art-left">
+<svg viewBox="0 0 70 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="lgL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D4A017" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#D4A017" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FF6B00" stop-opacity="0.7"/>
+      <stop offset="85%" stop-color="#D4A017" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#D4A017" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Main spine -->
+  <line x1="58" y1="0" x2="58" y2="900" stroke="url(#lgL)" stroke-width="1.5"/>
+  <!-- Inner line -->
+  <line x1="48" y1="50" x2="48" y2="850" stroke="#D4A017" stroke-width="0.5" stroke-opacity="0.2"/>
+  <g fill="none" stroke="#D4A017" stroke-opacity="0.55" stroke-width="0.9">
+    <!-- TOP LOTUS -->
+    <ellipse cx="58" cy="90" rx="13" ry="22"/>
+    <ellipse cx="58" cy="90" rx="8" ry="14"/>
+    <circle cx="58" cy="90" r="4" fill="#D4A017" fill-opacity="0.4" stroke="none"/>
+    <line x1="58" y1="68" x2="58" y2="55" stroke-opacity="0.4"/>
+    <!-- horizontal serifs -->
+    <line x1="38" y1="90" x2="50" y2="90" stroke-opacity="0.35"/>
+    <line x1="38" y1="84" x2="46" y2="84" stroke-opacity="0.2"/>
+    <line x1="38" y1="96" x2="46" y2="96" stroke-opacity="0.2"/>
+    <!-- DIAMOND 180 -->
+    <polygon points="58,158 70,178 58,198 46,178" stroke-opacity="0.5" fill="#D4A017" fill-opacity="0.08"/>
+    <line x1="36" y1="178" x2="46" y2="178" stroke-opacity="0.4"/>
+    <line x1="36" y1="173" x2="43" y2="173" stroke-opacity="0.2"/>
+    <line x1="36" y1="183" x2="43" y2="183" stroke-opacity="0.2"/>
+    <!-- TICK 270 -->
+    <line x1="36" y1="270" x2="60" y2="270" stroke-opacity="0.45"/>
+    <circle cx="58" cy="270" r="4" fill="#FF6B00" fill-opacity="0.5" stroke="none"/>
+    <line x1="36" y1="264" x2="48" y2="264" stroke-opacity="0.2"/>
+    <line x1="36" y1="276" x2="48" y2="276" stroke-opacity="0.2"/>
+    <!-- LOTUS 360 -->
+    <ellipse cx="58" cy="360" rx="11" ry="17"/>
+    <ellipse cx="58" cy="360" rx="6" ry="10"/>
+    <circle cx="58" cy="360" r="3.5" fill="#D4A017" fill-opacity="0.45" stroke="none"/>
+    <line x1="36" y1="360" x2="47" y2="360" stroke-opacity="0.3"/>
+    <!-- DIAMOND 450 -->
+    <polygon points="58,428 70,448 58,468 46,448" stroke-opacity="0.5" fill="#D4A017" fill-opacity="0.08"/>
+    <line x1="36" y1="448" x2="46" y2="448" stroke-opacity="0.4"/>
+    <!-- TICK 540 -->
+    <line x1="36" y1="540" x2="60" y2="540" stroke-opacity="0.45"/>
+    <circle cx="58" cy="540" r="4" fill="#FF6B00" fill-opacity="0.5" stroke="none"/>
+    <!-- LOTUS 630 -->
+    <ellipse cx="58" cy="630" rx="11" ry="17"/>
+    <ellipse cx="58" cy="630" rx="6" ry="10"/>
+    <circle cx="58" cy="630" r="3.5" fill="#D4A017" fill-opacity="0.45" stroke="none"/>
+    <line x1="36" y1="630" x2="47" y2="630" stroke-opacity="0.3"/>
+    <!-- DIAMOND 720 -->
+    <polygon points="58,698 70,718 58,738 46,718" stroke-opacity="0.5" fill="#D4A017" fill-opacity="0.08"/>
+    <line x1="36" y1="718" x2="46" y2="718" stroke-opacity="0.4"/>
+    <!-- TICK 810 -->
+    <line x1="36" y1="810" x2="60" y2="810" stroke-opacity="0.45"/>
+    <circle cx="58" cy="810" r="4" fill="#FF6B00" fill-opacity="0.5" stroke="none"/>
+    <!-- BOTTOM LOTUS -->
+    <ellipse cx="58" cy="870" rx="11" ry="16"/>
+    <circle cx="58" cy="870" r="3.5" fill="#D4A017" fill-opacity="0.4" stroke="none"/>
+  </g>
+  <!-- OM labels -->
+  <text x="30" y="135" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+  <text x="30" y="315" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+  <text x="30" y="495" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+  <text x="30" y="675" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+</svg>
+</div>
+
+<!-- RIGHT LINE ART -->
+<div class="line-art-right">
+<svg viewBox="0 0 70 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="lgR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D4A017" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#D4A017" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FF6B00" stop-opacity="0.7"/>
+      <stop offset="85%" stop-color="#D4A017" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#D4A017" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <line x1="12" y1="0" x2="12" y2="900" stroke="url(#lgR)" stroke-width="1.5"/>
+  <line x1="22" y1="50" x2="22" y2="850" stroke="#D4A017" stroke-width="0.5" stroke-opacity="0.2"/>
+  <g fill="none" stroke="#D4A017" stroke-opacity="0.55" stroke-width="0.9">
+    <ellipse cx="12" cy="90" rx="13" ry="22"/>
+    <ellipse cx="12" cy="90" rx="8" ry="14"/>
+    <circle cx="12" cy="90" r="4" fill="#D4A017" fill-opacity="0.4" stroke="none"/>
+    <line x1="12" y1="68" x2="12" y2="55" stroke-opacity="0.4"/>
+    <line x1="32" y1="90" x2="20" y2="90" stroke-opacity="0.35"/>
+    <line x1="32" y1="84" x2="24" y2="84" stroke-opacity="0.2"/>
+    <line x1="32" y1="96" x2="24" y2="96" stroke-opacity="0.2"/>
+    <polygon points="12,158 24,178 12,198 0,178" stroke-opacity="0.5" fill="#D4A017" fill-opacity="0.08"/>
+    <line x1="34" y1="178" x2="24" y2="178" stroke-opacity="0.4"/>
+    <line x1="34" y1="173" x2="27" y2="173" stroke-opacity="0.2"/>
+    <line x1="34" y1="183" x2="27" y2="183" stroke-opacity="0.2"/>
+    <line x1="10" y1="270" x2="34" y2="270" stroke-opacity="0.45"/>
+    <circle cx="12" cy="270" r="4" fill="#FF6B00" fill-opacity="0.5" stroke="none"/>
+    <line x1="34" y1="264" x2="22" y2="264" stroke-opacity="0.2"/>
+    <line x1="34" y1="276" x2="22" y2="276" stroke-opacity="0.2"/>
+    <ellipse cx="12" cy="360" rx="11" ry="17"/>
+    <ellipse cx="12" cy="360" rx="6" ry="10"/>
+    <circle cx="12" cy="360" r="3.5" fill="#D4A017" fill-opacity="0.45" stroke="none"/>
+    <line x1="34" y1="360" x2="23" y2="360" stroke-opacity="0.3"/>
+    <polygon points="12,428 24,448 12,468 0,448" stroke-opacity="0.5" fill="#D4A017" fill-opacity="0.08"/>
+    <line x1="34" y1="448" x2="24" y2="448" stroke-opacity="0.4"/>
+    <line x1="10" y1="540" x2="34" y2="540" stroke-opacity="0.45"/>
+    <circle cx="12" cy="540" r="4" fill="#FF6B00" fill-opacity="0.5" stroke="none"/>
+    <ellipse cx="12" cy="630" rx="11" ry="17"/>
+    <ellipse cx="12" cy="630" rx="6" ry="10"/>
+    <circle cx="12" cy="630" r="3.5" fill="#D4A017" fill-opacity="0.45" stroke="none"/>
+    <line x1="34" y1="630" x2="23" y2="630" stroke-opacity="0.3"/>
+    <polygon points="12,698 24,718 12,738 0,718" stroke-opacity="0.5" fill="#D4A017" fill-opacity="0.08"/>
+    <line x1="34" y1="718" x2="24" y2="718" stroke-opacity="0.4"/>
+    <line x1="10" y1="810" x2="34" y2="810" stroke-opacity="0.45"/>
+    <circle cx="12" cy="810" r="4" fill="#FF6B00" fill-opacity="0.5" stroke="none"/>
+    <ellipse cx="12" cy="870" rx="11" ry="16"/>
+    <circle cx="12" cy="870" r="3.5" fill="#D4A017" fill-opacity="0.4" stroke="none"/>
+  </g>
+  <text x="40" y="135" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+  <text x="40" y="315" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+  <text x="40" y="495" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+  <text x="40" y="675" font-family="serif" font-size="11" fill="#D4A017" fill-opacity="0.35" text-anchor="middle">ॐ</text>
+</svg>
+</div>
+
+<!-- TOP STRIP -->
+<div class="top-strip">॥ हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे । हरे राम हरे राम राम राम हरे हरे ॥</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-banner" id="home">
+  <div class="frame-border"></div>
+  <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div><div class="corner corner-br"></div>
+  <div class="om-bg">ॐ</div>
+
+  <div class="hero-layout">
+
+    <!-- MAHARAJ JI — LEFT PORTRAIT -->
+    <div class="portrait-frame">
+      <div class="portrait-svg-wrap">
+        <img class="portrait-image" src="https://gieogita.in/images/guru_dev_ji1.jpg" alt="Swami Shri Gyananand Ji Maharaj">
+      </div>
+      <div class="portrait-label">Swami Shri<br>Gyananand Ji Maharaj</div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="hero-center">
+      <div class="guru-badge">✦ Swami Shri Gyananand Ji Maharaj Presents ✦</div>
+      <span class="hero-om">ॐ</span>
+      <div class="hero-title-main">श्रीमद्भगवद्गीता</div>
+      <div class="hero-subtitle">पञ्चदशोऽध्यायः</div>
+      <div class="hero-divider"></div>
+      <div class="hero-yoga-title">पुरुषोत्तमयोगः</div>
+      <div style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:3px;color:var(--saffron);margin-bottom:1rem;text-transform:uppercase;">Chapter 15 — Purushottam Yoga</div>
+      <p class="hero-desc">इस अध्याय में भगवान श्रीकृष्ण ने संसार-वृक्ष का वर्णन करते हुए क्षर, अक्षर और पुरुषोत्तम का परम ज्ञान दिया है।</p>
+      <div class="hero-badges">
+        <div class="count-badge"><span class="num">20</span><span class="lbl">Shlokas</span></div>
+        <div class="count-badge"><span class="num">15</span><span class="lbl">Chapter</span></div>
+        <div class="count-badge"><span class="num" style="font-size:0.95rem;padding-top:8px;">Purushottam</span><span class="lbl">Yoga</span></div>
+      </div>
+    </div>
+
+    <!-- KRISHNA JI — RIGHT PORTRAIT -->
+    <div class="portrait-frame">
+      <div class="portrait-svg-wrap" style="background:linear-gradient(180deg,rgba(0,10,40,0.85),rgba(0,5,20,0.97));">
+        <img class="portrait-image" src="https://img.freepik.com/premium-photo/lord-krishna-statue-with-flute-peacock-feather-ornament_671039-1301.jpg?semt=ais_hybrid&w=740&q=80" alt="Bhagwan Shri Krishna Ji">
+      </div>
+      <div class="portrait-label">Bhagwan Shri<br>Krishna Ji</div>
+    </div>
+
+  </div><!-- hero-layout -->
+  <div class="scroll-indicator">Scroll Down</div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav" id="main-nav">
+  <div class="nav-title">🪔 Purushottam Yoga — Chapter 15</div>
+  <ul class="nav-links">
+    <li><a href="#mahatmya">Mahatmya</a></li>
+    <li><a href="#shlokas">All Shlokas</a></li>
+    <li><a href="#phala-shruti">Phala Shruti</a></li>
+    <li><a href="#guru">Maharaj Ji</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+
+  <!-- INTRO -->
+  <section class="intro-section" id="mahatmya">
+    <div class="section-title">Chapter Mahatmya — अध्याय महात्म्य</div>
+    <p class="intro-text">
+      श्रीमद्भगवद्गीता का पंद्रहवाँ अध्याय "पुरुषोत्तम योग" परम रहस्यमय और अत्यंत पवित्र है।
+      इस अध्याय में भगवान श्रीकृष्ण ने संसार को एक अश्वत्थ वृक्ष के समान बताते हुए
+      क्षर पुरुष, अक्षर पुरुष और स्वयं पुरुषोत्तम का दिव्य ज्ञान प्रदान किया है।
+    </p>
+    <div class="mahatmya-box">
+      यह अध्याय वेदों का सार है। जो भक्त इसे प्रतिदिन श्रद्धापूर्वक पढ़ता है,
+      वह इस संसार-सागर से मुक्त होकर परमात्मा को प्राप्त करता है।
+      गीता के इस पंद्रहवें अध्याय का पाठ अत्यंत पुण्यदायक है।
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><div class="fi-icon">🌳</div><div class="fi-title">संसार-वृक्ष</div><div class="fi-desc">The Divine Ashvattha Tree</div></div>
+      <div class="feature-item"><div class="fi-icon">🕉️</div><div class="fi-title">पुरुषोत्तम</div><div class="fi-desc">The Supreme Form of God</div></div>
+      <div class="feature-item"><div class="fi-icon">🪔</div><div class="fi-title">मोक्ष-मार्ग</div><div class="fi-desc">Path to Liberation via Bhakti</div></div>
+    </div>
+  </section>
+
+  <!-- SHLOKAS BANNER -->
+  <section class="section-banner">
+    <div style="font-size:1.5rem;color:var(--saffron);margin-bottom:0.5rem;">🙏</div>
+    <div style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:clamp(1.3rem,3vw,2rem);color:var(--bright-gold);">श्रीभगवानुवाच</div>
+    <div style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:2px;color:#C4A870;margin-top:0.6rem;text-transform:uppercase;">Bhagwan Shri Krishna Speaks —</div>
+  </section>
+
+  <section class="shlokas-section" id="shlokas">
+
+    <!-- 1 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">1</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 1 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">ऊर्ध्वमूलमधःशाखमश्वत्थं प्राहुरव्ययम् ।<br>छन्दांसि यस्य पर्णानि यस्तं वेद स वेदवित् ॥ १ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">2</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 2 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">अधश्चोर्ध्वं प्रसृतास्तस्य शाखा<br>गुणप्रवृद्धा विषयप्रवालाः ।<br>अधश्च मूलान्यनुसन्ततानि<br>कर्मानुबन्धीनि मनुष्यलोके ॥ २ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">3</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 3 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">न रूपमस्येह तथोपलभ्यते<br>नान्तो न चादिर्न च सम्प्रतिष्ठा ।<br>अश्वत्थमेनं सुविरूढमूलम्<br>असङ्गशस्त्रेण दृढेन छित्त्वा ॥ ३ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">4</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 4 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">ततः पदं तत्परिमार्गितव्यम्<br>यस्मिन्गता न निवर्तन्ति भूयः ।<br>तमेव चाद्यं पुरुषं प्रपद्ये<br>यतः प्रवृत्तिः प्रसृता पुराणी ॥ ४ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">5</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 5 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">निर्मानमोहा जितसङ्गदोषा<br>अध्यात्मनित्या विनिवृत्तकामाः ।<br>द्वन्द्वैर्विमुक्ताः सुखदुःखसंज्ञैः<br>गच्छन्त्यमूढाः पदमव्ययं तत् ॥ ५ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">6</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 6 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">न तद्भासयते सूर्यो न शशाङ्को न पावकः ।<br>यद्गत्वा न निवर्तन्ते तद्धाम परमं मम ॥ ६ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">7</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 7 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">ममैवांशो जीवलोके जीवभूतः सनातनः ।<br>मनःषष्ठानीन्द्रियाणि प्रकृतिस्थानि कर्षति ॥ ७ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">8</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 8 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">शरीरं यदवाप्नोति यच्चाप्युत्क्रामतीश्वरः ।<br>गृहीत्वैतानि संयाति वायुर्गन्धानिवाशयात् ॥ ८ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">9</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 9 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">श्रोत्रं चक्षुः स्पर्शनं च रसनं घ्राणमेव च ।<br>अधिष्ठाय मनश्चायं विषयानुपसेवते ॥ ९ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">10</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 10 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">उत्क्रामन्तं स्थितं वापि भुञ्जानं वा गुणान्वितम् ।<br>विमूढा नानुपश्यन्ति पश्यन्ति ज्ञानचक्षुषः ॥ १० ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">11</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 11 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">यतन्तो योगिनश्चैनं पश्यन्त्यात्मन्यवस्थितम् ।<br>यतन्तोऽप्यकृतात्मानो नैनं पश्यन्त्यचेतसः ॥ ११ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">12</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 12 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">यदादित्यगतं तेजो जगद्भासयतेऽखिलम् ।<br>यच्चन्द्रमसि यच्चाग्नौ तत्तेजो विद्धि मामकम् ॥ १२ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">13</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 13 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">गामाविश्य च भूतानि धारयाम्यहमोजसा ।<br>पुष्णामि चौषधीः सर्वाः सोमो भूत्वा रसात्मकः ॥ १३ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">14</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 14 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">अहं वैश्वानरो भूत्वा प्राणिनां देहमाश्रितः ।<br>प्राणापानसमायुक्तः पचाम्यन्नं चतुर्विधम् ॥ १४ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">15</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 15 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">सर्वस्य चाहं हृदि सन्निविष्टो<br>मत्तः स्मृतिर्ज्ञानमपोहनं च ।<br>वेदैश्च सर्वैरहमेव वेद्यो<br>वेदान्तकृद्वेदविदेव चाहम् ॥ १५ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">16</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 16 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">द्वाविमौ पुरुषौ लोके क्षरश्चाक्षर एव च ।<br>क्षरः सर्वाणि भूतानि कूटस्थोऽक्षर उच्यते ॥ १६ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 17 KEY -->
+    <div class="shloka-card key-shloka">
+      <div class="shloka-header">
+        <div class="shloka-number" style="border-color:var(--saffron);box-shadow:0 0 22px rgba(255,107,0,0.4);">17</div>
+        <div class="shloka-meta">
+          <div class="shloka-label" style="color:var(--bright-gold);">Shloka 17 — Key Verse — Purushottam Introduced</div>
+          <div class="shloka-sublabel">मुख्य श्लोक — पुरुषोत्तम का परिचय</div>
+        </div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">उत्तमः पुरुषस्त्वन्यः परमात्मेत्युदाहृतः ।<br>यो लोकत्रयमाविश्य बिभर्त्यव्यय ईश्वरः ॥ १७ ॥</div>
+        <div class="shloka-ornament" style="color:rgba(255,215,0,0.35);">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 18 KEY -->
+    <div class="shloka-card key-shloka">
+      <div class="shloka-header">
+        <div class="shloka-number" style="border-color:var(--bright-gold);box-shadow:0 0 28px rgba(255,215,0,0.45);">18</div>
+        <div class="shloka-meta">
+          <div class="shloka-label" style="color:var(--bright-gold);">Shloka 18 — Key Verse — Purushottam Declaration</div>
+          <div class="shloka-sublabel">मुख्य श्लोक — पुरुषोत्तम घोषणा</div>
+        </div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit" style="font-size:clamp(1.1rem,2.5vw,1.4rem);">यस्मात्क्षरमतीतोऽहमक्षरादपि चोत्तमः ।<br>अतोऽस्मि लोके वेदे च प्रथितः पुरुषोत्तमः ॥ १८ ॥</div>
+        <div class="shloka-ornament" style="color:rgba(255,215,0,0.35);">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 19 -->
+    <div class="shloka-card">
+      <div class="shloka-header">
+        <div class="shloka-number">19</div>
+        <div class="shloka-meta"><div class="shloka-label">Shloka 19 — Chapter 15</div><div class="shloka-sublabel">पंद्रहवाँ अध्याय</div></div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit">यो मामेवमसम्मूढो जानाति पुरुषोत्तमम् ।<br>स सर्वविद्भजति मां सर्वभावेन भारत ॥ १९ ॥</div>
+        <div class="shloka-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+    <!-- 20 -->
+    <div class="shloka-card" style="border-color:rgba(212,160,23,0.45);">
+      <div class="shloka-header" style="background:rgba(212,160,23,0.1);">
+        <div class="shloka-number" style="border-color:var(--bright-gold);box-shadow:0 0 22px rgba(212,160,23,0.3);">20</div>
+        <div class="shloka-meta">
+          <div class="shloka-label" style="color:var(--bright-gold);">Shloka 20 — Final Verse — Phala Shruti</div>
+          <div class="shloka-sublabel">अंतिम श्लोक — फलश्रुति</div>
+        </div>
+      </div>
+      <div class="shloka-body">
+        <div class="shloka-sanskrit" style="color:var(--bright-gold);">इति गुह्यतमं शास्त्रमिदमुक्तं मयानघ ।<br>एतद्बुद्ध्वा बुद्धिमान्स्यात्कृतकृत्यश्च भारत ॥ २० ॥</div>
+        <div class="shloka-ornament" style="color:rgba(212,160,23,0.3);">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PHALA SHRUTI -->
+  <section class="phala-shruti" id="phala-shruti">
+    <div style="font-size:2rem;margin-bottom:1rem;" class="diya">🪔</div>
+    <div class="phala-shruti-title">Phala Shruti — फलश्रुति</div>
+    <div style="width:110px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1rem auto;"></div>
+    <p style="font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;line-height:2.2;color:var(--cream);position:relative;z-index:1;margin-bottom:1.5rem;max-width:680px;margin-left:auto;margin-right:auto;">
+      पंद्रहवें अध्याय का प्रतिदिन पाठ करने से साधक समस्त पापों से मुक्त होकर परमात्मा को प्राप्त करता है।
+      यह अध्याय समस्त वेदों का सार है और इसमें पुरुषोत्तम भगवान श्रीकृष्ण का परम रहस्य निहित है।
+    </p>
+    <div class="benefit-chips">
+      <div class="chip">🌸 पाप-मुक्ति</div>
+      <div class="chip">🕉️ मोक्ष-प्राप्ति</div>
+      <div class="chip">🙏 भक्ति-वृद्धि</div>
+      <div class="chip">💡 ज्ञान-प्राप्ति</div>
+    </div>
+  </section>
+
+  <!-- GURU -->
+  <section class="guru-section" id="guru">
+    <div style="font-size:3rem;margin-bottom:1rem;position:relative;z-index:2;">🙏</div>
+    <div class="guru-name">Swami Shri Gyananand Ji Maharaj</div>
+    <div class="guru-name-hi">स्वामी श्री ज्ञानानन्द जी महाराज</div>
+    <div class="guru-subtitle">✦ Param Pujya Gurudev ✦</div>
+    <div style="width:140px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.5rem auto;position:relative;z-index:2;"></div>
+    <div class="guru-message">
+      "पुरुषोत्तम वही है जो क्षर और अक्षर — दोनों से परे है।
+      जब तक हम इस संसार-वृक्ष से आसक्त हैं, तब तक परमात्मा की प्राप्ति संभव नहीं।
+      भगवान की भक्ति ही वह शस्त्र है जो इस मोह-माया के वृक्ष को काट सकती है।
+      श्रीमद्भगवद्गीता का प्रत्येक श्लोक एक दिव्य ज्योति है — इसे हृदय में धारण करो।"
+    </div>
+    <div class="guru-sig">— Swami Shri Gyananand Ji Maharaj</div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="closing-mantra">
+      ॥ इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+      श्रीकृष्णार्जुनसंवादे पुरुषोत्तमयोगो नाम पञ्चदशोऽध्यायः ॥
+    </div>
+    <div style="width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:2rem auto;"></div>
+    <div class="closing-hari">हरि ॐ तत्सत्</div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-om">ॐ</div>
+  <div class="footer-text">
+    Shrimad Bhagavad Gita — Chapter 15 — Purushottam Yoga<br>
+    Under the Divine Guidance of Swami Shri Gyananand Ji Maharaj<br><br>
+    Jai Shri Krishna 🙏
+  </div>
+</footer>
+
+<script>
+  // Progress
+  window.addEventListener('scroll',()=>{
+    const pct=(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight))*100;
+    document.getElementById('progressBar').style.width=pct+'%';
+  });
+  // Particles
+  (function(){
+    const c=document.getElementById('particles');
+    const colors=['#FFD700','#FF6B00','#D4A017','#FFF8E7'];
+    for(let i=0;i<22;i++){
+      const p=document.createElement('div');p.className='particle';
+      const s=Math.random()*6+3;
+      p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*12}s;`;
+      c.appendChild(p);
+    }
+  })();
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});
+  });
+  // Fade in
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
+  },{threshold:0.08});
+  document.querySelectorAll('.shloka-card').forEach((card,i)=>{
+    card.style.cssText+=`opacity:0;transform:translateY(22px);transition:opacity 0.65s ease ${i*0.04}s,transform 0.65s ease ${i*0.04}s,box-shadow 0.3s ease;`;
+    io.observe(card);
+  });
+</script>
+</body>
+</html>
